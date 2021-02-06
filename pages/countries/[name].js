@@ -79,8 +79,6 @@ export async function getStaticProps({ params }) {
         .query(COUNTRY_QUERY, { code: countryCode })
         .toPromise()
 
-    console.log({ data, error })
-
     return {
         props: {
             country: data.country,

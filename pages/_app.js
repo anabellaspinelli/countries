@@ -1,4 +1,5 @@
 import '../styles/global.css'
+import 'tailwindcss/tailwind.css'
 
 import { createClient, Provider } from 'urql'
 

@@ -25,18 +25,25 @@ function Home({ allPostsData }) {
     return (
         <Layout home>
             <Head>
-                <title>{siteTitle}</title>
+                <title className='font-black'>{siteTitle}</title>
             </Head>
-            <section>
-                {data.countries.map((country) => (
-                    <div key={country.code}>
+            <section className='container my-0 mx-auto'>
+                <div className='flex flex-wrap p-1 bg-blue-50 sm:rounded-3xl'>
+                    {data.countries.map((country) => (
                         <Link
                             href={`/countries/${generateCountrySlug(country)}`}
                         >
-                            <a>{country.name}</a>
+                            <div
+                                className='transition-all cursor-pointer flex-auto bg-white shadow-lg sm:rounded-3xl sm:p-20 m-1 hover:bg-yellow-50'
+                                key={country.code}
+                            >
+                                <h2 className='text-xl font-medium'>
+                                    {country.name}
+                                </h2>
+                            </div>
                         </Link>
-                    </div>
-                ))}
+                    ))}
+                </div>
             </section>
         </Layout>
     )
